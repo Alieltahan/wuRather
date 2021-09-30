@@ -55,15 +55,15 @@ export default function BasicTabs() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Answered Questions" {...a11yProps(0)} />
-          <Tab label="Unanswered Questions" {...a11yProps(1)} />
+          <Tab label="Unanswered Questions" {...a11yProps(0)} />
+          <Tab label="Answered Questions" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <AnsweredQuestions />
+        <UnAnsweredQuestions />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <UnAnsweredQuestions />
+        <AnsweredQuestions />
       </TabPanel>
     </Box>
   );

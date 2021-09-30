@@ -21,11 +21,12 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
     ├── components.js # container for all the components.
         ├── LoginPage.js #
             ├── NavBar.js #
+                └──  NavItem.js #
             ├── Dashboard.js #
-                ├── AnsweredQ.js #
-                    └──  Questions.js #
-                └──  UnAnsweredQ.js #
-                    └──  Questions.js
+                ├── Questions.js #
+                    ├── AnsweredQ.js #
+                    └──  UnAnsweredQ.js #
+                    QUESTION DETAILS....
             └── LeaderBoard.js #
                 └── UserCard.js #
     ├── styles # container for all the styles files.
