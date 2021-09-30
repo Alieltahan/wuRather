@@ -20,6 +20,7 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── components.js # container for all the components.
         ├── LoginPage.js #
+            ├── NavBar.js #
             ├── Dashboard.js #
                 ├── AnsweredQ.js #
                     └──  Questions.js #

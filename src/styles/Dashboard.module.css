@@ -3,12 +3,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 40vh;
 }
-.container h4 {
-  padding-bottom: 2rem;
-}
-.loginBtn {
-  margin: 2rem;
-  padding: 2rem;
+.questions {
+  display: flex;
+  flex-direction: row;
+  /* padding: 2rem; */
 }

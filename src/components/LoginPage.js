@@ -18,12 +18,12 @@ const LoginPage = () => {
 
   return (
     <div className={styles.container}>
-      <h3>
+      <h4>
         Sign in to Would You Rather Game By Selecting One Of The Following Users
-      </h3>
+      </h4>
       <div>
-        <Box sx={{ minWidth: 320 }}>
-          <FormControl fullWidth>
+        <Box sx={{ minWidth: 300 }}>
+          <FormControl fullWidth variant="standard">
             <InputLabel id="userName-Label">User Name</InputLabel>
             <Select
               labelId="userName-Label"

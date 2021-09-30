@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  margin-bottom: 2rem;
+}
