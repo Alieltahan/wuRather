@@ -6,28 +6,45 @@ import Dashboard from "./components/Dashboard";
 import NewQuestion from "./components/NewQuestion";
 import LeaderBoard from "./components/LeaderBoard";
 import QuestionDetails from "./components/QuestionDetails";
-import Questions from "./components/Questions";
 
-import { useEffect } from "react";
-import { getQuestions, getUsers } from "./components/services/api";
+import { useEffect, useState } from "react";
+import { _getQuestions } from "./_DATA";
+import { Provider } from "react-redux";
+import confStore from "./store/confStore";
 
 function App() {
-  useEffect(() => {
-    getUsers();
-    getQuestions();
-  }, []);
+  // Redux Store
+  const store = confStore();
+
+  // const [q, setQ] = useState({});
+  // useEffect(() => {
+  //   _getQuestions().then((data) => setQ(data));
+  // }, []);
+
+  // console.log(q);
+
+  // const getQuestions = async () => {
+  //   try {
+  //     const getQ = await _getQuestions();
+  //     const result = await getQ;
+  //     setQ(result);
+  //   } catch (e) {
+  //     console.log(e.message);
+  //   }
+  // };
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route path="/questions/:id" component={QuestionDetails} />
-        <Route path="/questions" component={Questions} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/newQuestion" component={NewQuestion} />
-        <Route path="/leaderBoard" component={LeaderBoard} />
-        <Route path="/" component={LoginPage} />
-      </Switch>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route path="/questions/:id" component={QuestionDetails} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/add" component={NewQuestion} />
+          <Route path="/leaderBoard" component={LeaderBoard} />
+          <Route path="/" component={LoginPage} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
