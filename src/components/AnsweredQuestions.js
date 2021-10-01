@@ -1,5 +1,9 @@
 const AnsweredQuestions = () => {
-  return <div>Answered Questions</div>;
+  return (
+    <>
+      <span>Answered Questions</span>
+    </>
+  );
 };
 
 export default AnsweredQuestions;

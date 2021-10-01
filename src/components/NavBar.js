@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <NavItem linkTo="/Dashboard" title="Dashboard" />
-      <NavItem linkTo="/NewQuestion" title="New Question" />
+      <NavItem linkTo="/add" title="New Question" />
       <NavItem linkTo="/LeaderBoard" title="LeaderBoard" />
       <NavItem linkTo="/UserName" title="UserName" />
       <NavItem linkTo="/" title="LogoutButton" />

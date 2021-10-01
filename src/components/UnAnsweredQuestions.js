@@ -1,7 +1,9 @@
-import React from "react";
-
 const UnAnsweredQuestions = () => {
-  return <div>UnAnswered</div>;
+  return (
+    <>
+      <span>Unanswered Questions</span>
+    </>
+  );
 };
 
 export default UnAnsweredQuestions;
