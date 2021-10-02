@@ -1,19 +1,15 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { _getUsers } from "../_DATA";
-
-const fetchUsers = createAsyncThunk("", async () => {
-  const response = await _getUsers();
-  return response.data;
-});
+import { createSlice } from "@reduxjs/toolkit";
 
 const usersSlice = createSlice({
   name: "users",
-  initialState: [],
+  initialState: {},
   reducers: {
     // Actions => action handler
-    getAllUsers: () => fetchUsers.fulfilled,
+    getUsers: (state, action) => {
+      return action.payload;
+    },
   },
 });
 
-// export const {} = usersSlice.actions;
+export const { getUsers } = usersSlice.actions;
 export default usersSlice.reducer;

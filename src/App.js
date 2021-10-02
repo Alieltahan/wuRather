@@ -7,31 +7,21 @@ import NewQuestion from "./components/NewQuestion";
 import LeaderBoard from "./components/LeaderBoard";
 import QuestionDetails from "./components/QuestionDetails";
 
-import { useEffect, useState } from "react";
-import { _getQuestions } from "./_DATA";
+import { useEffect } from "react";
+import { _getQuestions, _getUsers } from "./_DATA";
 import { Provider } from "react-redux";
 import confStore from "./store/confStore";
+import { getUsers } from "./store/users";
+import { getQuestions } from "./store/questions";
 
 function App() {
-  // Redux Store
   const store = confStore();
+  useEffect(() => {
+    // Redux Store
+    _getUsers().then((data) => store.dispatch(getUsers(data)));
+    _getQuestions().then((data) => store.dispatch(getQuestions(data)));
+  }, []);
 
-  // const [q, setQ] = useState({});
-  // useEffect(() => {
-  //   _getQuestions().then((data) => setQ(data));
-  // }, []);
-
-  // console.log(q);
-
-  // const getQuestions = async () => {
-  //   try {
-  //     const getQ = await _getQuestions();
-  //     const result = await getQ;
-  //     setQ(result);
-  //   } catch (e) {
-  //     console.log(e.message);
-  //   }
-  // };
   return (
     <Provider store={store}>
       <BrowserRouter>
