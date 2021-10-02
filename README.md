@@ -18,7 +18,7 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
 └── src
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── components.js # container for all the components.
+    ├── components # container for all the components.
         ├── LoginPage.js #
             ├── NavBar.js #
                 └──  NavItem.js #
@@ -29,6 +29,11 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
                     QUESTION DETAILS....
             └── LeaderBoard.js #
                 └── UserCard.js #
+        ├── store # container for the redux store's files
+            ├── confStore.js # Redux Store
+            ├── rootReducer.js # Combining users/questions reducers
+            ├── users.js # users reducer
+            └── questions.js # questions reducer
     ├── styles # container for all the styles files.
         ├── LoginPage.module.css #
         ├──  #
