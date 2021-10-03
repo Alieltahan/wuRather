@@ -12,7 +12,7 @@ const Dashboard = () => {
     <div className={styles.container}>
       <h3> Dashboard </h3>
       <div className={styles.questions}>
-        <Questions />
+        <Questions answered={answeredQ} unAnswered={unAnsweredQ} />
       </div>
     </div>
   );
