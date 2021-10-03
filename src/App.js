@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { _getQuestions, _getUsers } from "./_DATA";
 import { Provider } from "react-redux";
 import confStore from "./store/confStore";
-import { getUsers, usersArray } from "./store/users";
+import { getUsers } from "./store/users";
 import { getQuestions } from "./store/questions";
 
 function App() {

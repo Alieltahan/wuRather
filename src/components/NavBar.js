@@ -4,18 +4,13 @@ import NavItem from "./NavItem";
 import styles from "../styles/NavBar.module.css";
 
 const NavBar = () => {
-  // const [value, setValue] = useState("one");
-
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  // };
-
   return (
     <div className={styles.container}>
       <NavItem linkTo="/Dashboard" title="Dashboard" />
       <NavItem linkTo="/add" title="New Question" />
       <NavItem linkTo="/LeaderBoard" title="LeaderBoard" />
-      <NavItem linkTo="/UserName" title="UserName" />
+
+      <NavItem linkTo="/Login" title="Login" />
       <NavItem linkTo="/" title="LogoutButton" />
     </div>
   );

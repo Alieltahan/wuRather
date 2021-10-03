@@ -9,6 +9,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { activeUser } from "../store/authUser";
+import { useHistory } from "react-router";
 
 const LoginPage = () => {
   const [userName, setUserName] = React.useState("");
@@ -24,10 +25,13 @@ const LoginPage = () => {
   // Calling the userList from the Redux State.
   const usersList = useSelector((state) => state.users);
 
+  // Getting useHistory Hook from Router
+  const history = useHistory();
   // Handle Login
   const handleClick = (e) => {
     e.preventDefault();
     dispatch(activeUser(userName));
+    history.push("/dashboard");
   };
 
   return (
