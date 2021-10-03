@@ -7,13 +7,27 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { activeUser } from "../store/authUser";
 
 const LoginPage = () => {
   const [userName, setUserName] = React.useState("");
 
+  // Importing dispatch from React-Redux
+  const dispatch = useDispatch();
+  // Handle Changing Selected User
   const handleChange = (event) => {
-    setUserName(event.target.value);
-    console.log(event.target.value);
+    const selectedUser = event.target.value;
+    setUserName(selectedUser);
+  };
+
+  // Calling the userList from the Redux State.
+  const usersList = useSelector((state) => state.users);
+
+  // Handle Login
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch(activeUser(userName));
   };
 
   return (
@@ -32,16 +46,22 @@ const LoginPage = () => {
               label="userName"
               onChange={handleChange}
             >
-              <MenuItem value={""}>NONE</MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {Object.keys(usersList).map((user) => (
+                <MenuItem value={user} key={user}>
+                  <img
+                    className={styles.userpic}
+                    src={usersList[user].avatarURL}
+                    alt="User pic"
+                  />
+                  {usersList[user].name}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Box>
         <div className={styles.loginBtn}>
           <Stack direction="column" spacing={10}>
-            <Button variant="contained" color="success">
+            <Button variant="contained" color="success" onClick={handleClick}>
               Login
             </Button>
           </Stack>
