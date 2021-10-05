@@ -1,0 +1,166 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(4, max-content);
+  justify-content: center;
+  align-items: center;
+  justify-items: start;
+  background-color: rgba(194, 193, 193, 0.933);
+  padding: 2rem;
+  max-width: 50%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.q__details__header {
+  grid-row: 2/3;
+  width: 100%;
+}
+
+.q__userpic {
+  border-radius: 50%;
+  padding: 0 1rem;
+  height: 100%;
+  display: grid;
+  justify-self: center;
+}
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.optioninput {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.optioninput:hover {
+  background: #9faab7;
+}
+.optioninput:checked {
+  background: #40e0d0;
+}
+.optioninput:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: "✔";
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.optioninput:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.optioninput.radio {
+  border-radius: 50%;
+}
+.optioninput.radio::after {
+  border-radius: 50%;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  margin: 1rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  font-weight: 400;
+  position: relative;
+  border: none;
+}
+.btn:hover,
+.btn:focus {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  outline: none;
+  cursor: pointer;
+}
+.btn:active {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn--animated {
+  animation: moveInBottom 2s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.4s;
+  z-index: -1;
+  border-radius: 10rem;
+}
+.btn--text:link,
+.btn--text:visited {
+  display: inline-block;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: 0.8s;
+}
+.btn--text:hover {
+  color: white;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.btn--text:active {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0px);
+}
+.q__btn {
+  display: grid;
+  justify-self: center;
+  margin: 1.5rem 0 0 0;
+  background-color: wheat;
+  font-size: 0.8rem;
+}

@@ -16,6 +16,7 @@ const LoginPage = () => {
 
   // Importing dispatch from React-Redux
   const dispatch = useDispatch();
+
   // Handle Changing Selected User
   const handleChange = (event) => {
     const selectedUser = event.target.value;
@@ -30,7 +31,7 @@ const LoginPage = () => {
   // Handle Login
   const handleClick = (e) => {
     e.preventDefault();
-    dispatch(activeUser(userName));
+    dispatch(activeUser({ ...usersList[userName] }));
     history.push("/dashboard");
   };
 

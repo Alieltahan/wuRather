@@ -7,19 +7,15 @@ import NewQuestion from "./components/NewQuestion";
 import LeaderBoard from "./components/LeaderBoard";
 import QuestionDetails from "./components/QuestionDetails";
 import { useEffect } from "react";
-import { _getQuestions, _getUsers } from "./_DATA";
 import { Provider } from "react-redux";
 import confStore from "./store/confStore";
-import { getUsers } from "./store/users";
-import { getQuestions } from "./store/questions";
 
 function App() {
   // Redux Store
   const store = confStore();
   // Getting the data once the component mounts.
   useEffect(() => {
-    _getUsers().then((data) => store.dispatch(getUsers(data)));
-    _getQuestions().then((data) => store.dispatch(getQuestions(data)));
+    store.dispatch({ type: "apiCallBegin" });
   }, [store]);
 
   return (

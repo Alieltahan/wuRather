@@ -5,11 +5,14 @@ const questionsSlice = createSlice({
   initialState: {},
   reducers: {
     // Actions => action handler
-    getQuestions: (state, action) => {
+    questionsReceived: (state, action) => {
+      return action.payload;
+    },
+    getQuestionsFailed: (state, action) => {
       return action.payload;
     },
   },
 });
 
-export const { getQuestions } = questionsSlice.actions;
+export const { questionsReceived, getQuestionsFailed } = questionsSlice.actions;
 export default questionsSlice.reducer;

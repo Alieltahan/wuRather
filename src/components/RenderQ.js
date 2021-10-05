@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import styles from "../styles/RenderQ.module.css";
 
 const RenderQ = ({ questArray }) => {
@@ -37,9 +38,11 @@ const RenderQ = ({ questArray }) => {
                   </tr>
                 </tbody>
               </table>
-              <button className={styles.glow} type="button">
-                View Question
-              </button>
+              <Link to={`/questions/${questions[q].id}`}>
+                <button className={styles.glow} type="button">
+                  View Question
+                </button>
+              </Link>
             </div>
           </div>
         ))}

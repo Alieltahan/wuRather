@@ -26,6 +26,7 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
                 ├── Questions.js #
                     ├── AnsweredQ.js #
                     └──  UnAnsweredQ.js #
+                        └──RenderQ.js
                     QUESTION DETAILS....
             └── LeaderBoard.js #
                 └── UserCard.js #
