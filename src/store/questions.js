@@ -11,8 +11,7 @@ const questionsSlice = createSlice({
     getQuestionsFailed: (state, action) => {
       return action.payload;
     },
-    answerQuestionQ: (state, action) => {
-      console.log(action.payload, "Q Action");
+    updateVotes: (state, action) => {
       let { qid, authedUser, answer } = action.payload;
       state[qid][answer].votes.push(authedUser);
     },
@@ -23,6 +22,6 @@ const questionsSlice = createSlice({
   },
 });
 
-export const { questionsReceived, getQuestionsFailed, answerQuestionQ } =
+export const { questionsReceived, getQuestionsFailed, updateVotes } =
   questionsSlice.actions;
 export default questionsSlice.reducer;

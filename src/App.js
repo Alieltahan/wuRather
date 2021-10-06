@@ -7,7 +7,7 @@ import NewQuestion from "./components/NewQuestion";
 import LeaderBoard from "./components/LeaderBoard";
 import QuestionDetails from "./components/QuestionDetails";
 import { useEffect } from "react";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import confStore from "./store/confStore";
 
 function App() {

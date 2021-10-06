@@ -32,7 +32,7 @@ const QuestionDetails = (props) => {
         answer: option,
       },
     });
-    history.push("/dashboard");
+    history.push(`/questions/${QuestionId}`);
   };
 
   // Question Votes Counts

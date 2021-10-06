@@ -8,7 +8,7 @@ import { answerQuestion } from "../authUser";
 import {
   questionsReceived,
   getQuestionsFailed,
-  answerQuestionQ,
+  updateVotes,
 } from "../questions";
 import { usersReceived, getUsersFailed } from "../users";
 
@@ -28,7 +28,7 @@ const api =
       _saveQuestionAnswer(action.payLoad).then(() => {
         const { qid, answer } = action.payLoad;
         dispatch(answerQuestion([qid, answer]));
-        return dispatch(answerQuestionQ(action.payLoad));
+        return dispatch(updateVotes(action.payLoad));
       });
     } else if (action.type === "api/addQuestion") {
       _saveQuestion(action.payLoad).then(() =>
