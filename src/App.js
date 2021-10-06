@@ -15,7 +15,7 @@ function App() {
   const store = confStore();
   // Getting the data once the component mounts.
   useEffect(() => {
-    store.dispatch({ type: "apiCallBegin" });
+    store.dispatch({ type: "api/callBegan" });
   }, [store]);
 
   return (

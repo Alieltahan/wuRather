@@ -10,6 +10,12 @@
 }
 .question {
   display: flex;
+  background-color: wheat;
+  border-radius: 5%;
+  margin: 0.3rem;
+  padding: 1.5rem 1rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 table tr {
   border-bottom: 1px solid black;
@@ -18,7 +24,9 @@ table tr {
 table tr:last-child {
   border: 0;
 }
-
+.questions__tableline {
+  padding: 0.5rem;
+}
 .glow {
   width: 220px;
   height: 50px;

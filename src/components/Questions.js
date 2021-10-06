@@ -42,11 +42,12 @@ function a11yProps(index) {
 
 export default function BasicTabs({ answered, unAnswered }) {
   const [value, setValue] = React.useState(0);
+  const labelUnanswered = `Unanswered Questions ${unAnswered.length}`;
+  const labelAnswered = `Answered Questions ${answered.length}`;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -55,13 +56,15 @@ export default function BasicTabs({ answered, unAnswered }) {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Unanswered Questions" {...a11yProps(0)} />
-          <Tab label="Answered Questions" {...a11yProps(1)} />
+          {" "}
+          <Tab label={labelUnanswered} {...a11yProps(0)} />
+          <Tab label={labelAnswered} {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         <UnAnsweredQuestions questArray={unAnswered} />
       </TabPanel>
+
       <TabPanel value={value} index={1}>
         <AnsweredQuestions questArray={answered} />
       </TabPanel>

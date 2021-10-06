@@ -11,8 +11,18 @@ const questionsSlice = createSlice({
     getQuestionsFailed: (state, action) => {
       return action.payload;
     },
+    answerQuestionQ: (state, action) => {
+      console.log(action.payload, "Q Action");
+      let { qid, authedUser, answer } = action.payload;
+      state[qid][answer].votes.push(authedUser);
+    },
+    // TODO Fixed/Removed
+    addQuestion: (state, action) => {
+      return state;
+    },
   },
 });
 
-export const { questionsReceived, getQuestionsFailed } = questionsSlice.actions;
+export const { questionsReceived, getQuestionsFailed, answerQuestionQ } =
+  questionsSlice.actions;
 export default questionsSlice.reducer;

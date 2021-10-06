@@ -27,13 +27,13 @@ const RenderQ = ({ questArray }) => {
                   <tr>
                     <td className={styles.questions__tableline}>
                       {" "}
-                      {questions[q].optionOne.text}{" "}
+                      1- {questions[q].optionOne.text}{" "}
                     </td>
                   </tr>
                   <tr>
                     <td className={styles.questions__tableline}>
                       {" "}
-                      {questions[q].optionTwo.text}{" "}
+                      2- {questions[q].optionTwo.text}{" "}
                     </td>
                   </tr>
                 </tbody>
