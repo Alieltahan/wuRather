@@ -27,7 +27,11 @@ const LeaderBoard = () => {
       <h3>Leader Board</h3>
       {usersSorted.map((user) => (
         <div className={styles.container}>
-          <img className={styles.userpic} src={userList[user].avatarURL} />
+          <img
+            className={styles.userpic}
+            src={userList[user].avatarURL}
+            alt="user pic"
+          />
           <div className={styles.textflex}>
             {" "}
             <strong>{userList[user].name}</strong>

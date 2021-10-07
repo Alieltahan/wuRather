@@ -29,10 +29,10 @@ const LoginPage = () => {
   // Getting useHistory Hook from Router
   const history = useHistory();
   // Handle Login
-  const handleClick = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     dispatch(activeUser({ ...usersList[userName] }));
-    history.push("/dashboard");
+    history.push("/");
   };
 
   return (
@@ -66,7 +66,7 @@ const LoginPage = () => {
         </Box>
         <div className={styles.loginBtn}>
           <Stack direction="column" spacing={10}>
-            <Button variant="contained" color="success" onClick={handleClick}>
+            <Button variant="contained" color="success" onClick={handleLogin}>
               Login
             </Button>
           </Stack>

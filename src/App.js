@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./components/LoginPage";
 import NavBar from "./components/NavBar";
@@ -7,8 +7,9 @@ import NewQuestion from "./components/NewQuestion";
 import LeaderBoard from "./components/LeaderBoard";
 import QuestionDetails from "./components/QuestionDetails";
 import { useEffect } from "react";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import confStore from "./store/confStore";
+import NotFound from "./components/NotFound";
 
 function App() {
   // Redux Store
@@ -24,10 +25,12 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/questions/:id" component={QuestionDetails} />
-          <Route path="/dashboard" component={Dashboard} />
           <Route path="/add" component={NewQuestion} />
           <Route path="/leaderBoard" component={LeaderBoard} />
-          <Route path="/" component={LoginPage} />
+          <Route path="/NotFound" component={NotFound} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/" exact component={Dashboard} />
+          <Redirect to="/NotFound" component={NotFound} />
         </Switch>
       </BrowserRouter>
     </Provider>

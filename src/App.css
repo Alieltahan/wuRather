@@ -53,6 +53,10 @@
     #fff 5%
   );
 }
+.active {
+  color: #000;
+  background-color: #22a54e;
+}
 .percentage:after {
   content: "";
   display: block;

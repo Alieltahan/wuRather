@@ -31,7 +31,7 @@ const NewQuestion = () => {
         optionTwoText: optionTwo,
       },
     });
-    history.push("/dashboard");
+    history.push("/");
   };
 
   return (
