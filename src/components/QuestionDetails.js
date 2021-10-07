@@ -26,7 +26,7 @@ const QuestionDetails = (props) => {
     if (!option) return alert(`Please select an option`);
     dispatch({
       type: "api/answerQuestion",
-      payLoad: {
+      payload: {
         authedUser: activeUser.id,
         qid: QuestionId,
         answer: option,
@@ -83,12 +83,14 @@ const QuestionDetails = (props) => {
           />
           {askedQuestion.optionTwo.text}
         </label>
-        <button
-          className={`${styles.btn} ${styles.q__btn} ${styles.glow} `}
-          type="submit"
-        >
-          Submit
-        </button>
+        <div className={styles.btn__container}>
+          <button
+            className={`${styles.btn} ${styles.q__btn} ${styles.glow} `}
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );

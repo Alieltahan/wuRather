@@ -11,8 +11,19 @@ const usersSlice = createSlice({
     getUsersFailed: (state, action) => {
       return action.payload;
     },
+    answerQuestionToUser: (state, action) => {
+      const { authedUser, qid, answer } = action.payload;
+      return {
+        ...state,
+        [authedUser]: {
+          ...state[authedUser],
+          answers: { ...state[authedUser].answers, [qid]: answer },
+        },
+      };
+    },
   },
 });
 
-export const { usersReceived, getUsersFailed } = usersSlice.actions;
+export const { usersReceived, getUsersFailed, answerQuestionToUser } =
+  usersSlice.actions;
 export default usersSlice.reducer;

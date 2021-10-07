@@ -10,7 +10,7 @@ import {
   getQuestionsFailed,
   updateVotes,
 } from "../questions";
-import { usersReceived, getUsersFailed } from "../users";
+import { usersReceived, getUsersFailed, answerQuestionToUser } from "../users";
 
 const api =
   ({ dispatch }) =>
@@ -25,10 +25,11 @@ const api =
         dispatch(questionsReceived(data[1]));
       });
     } else if (action.type === "api/answerQuestion") {
-      _saveQuestionAnswer(action.payLoad).then(() => {
-        const { qid, answer } = action.payLoad;
+      _saveQuestionAnswer(action.payload).then(() => {
+        const { qid, answer } = action.payload;
         dispatch(answerQuestion([qid, answer]));
-        return dispatch(updateVotes(action.payLoad));
+        dispatch(answerQuestionToUser(action.payload));
+        return dispatch(updateVotes(action.payload));
       });
     } else if (action.type === "api/addQuestion") {
       _saveQuestion(action.payLoad).then(() =>
