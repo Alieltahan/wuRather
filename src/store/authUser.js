@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: {},
+  initialState: { loggedin: false },
   reducers: {
     // Actions => action handler
     activeUser: (state, action) => {
-      return action.payload;
+      return { ...state, ...action.payload };
     },
     answerQuestion: (state, action) => {
       let qid = action.payload[0];
@@ -14,19 +14,24 @@ const authSlice = createSlice({
       let newObj = { [qid]: answerOption };
       return { ...state, answers: { ...state.answers, ...newObj } };
     },
+    login: (state, action) => {
+      return { ...state, loggedin: true };
+    },
   },
 });
 
 //
 export const getAnsweredQ = (state) => {
-  return state.auth ? Object.keys(state.auth?.answers) : null;
+  if (!state.auth.loggedin) return;
+  return Object.keys(state.auth.answers);
 };
 
 export const getUnAnsweredQ = (state) => {
+  if (!state.auth.loggedin) return;
   return Object.keys(state.questions).filter(
     (o1) => !Object.keys(state.auth.answers).some((o2) => o2 === o1)
   );
 };
 
-export const { activeUser, answerQuestion, logout } = authSlice.actions;
+export const { activeUser, answerQuestion, login } = authSlice.actions;
 export default authSlice.reducer;

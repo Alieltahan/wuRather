@@ -8,7 +8,7 @@ import Select from "@mui/material/Select";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { activeUser } from "../store/authUser";
+import { activeUser, login } from "../store/authUser";
 import { useHistory } from "react-router";
 
 const LoginPage = () => {
@@ -28,9 +28,11 @@ const LoginPage = () => {
 
   // Getting useHistory Hook from Router
   const history = useHistory();
+
   // Handle Login
   const handleLogin = (e) => {
     e.preventDefault();
+    dispatch(login());
     dispatch(activeUser({ ...usersList[userName] }));
     history.push("/");
   };

@@ -16,32 +16,34 @@ const NavBar = () => {
 
   return (
     <div className={styles.container}>
-      <NavLink className={styles.navitem} to="/">
-        Dashboard
-      </NavLink>
-      <NavLink className={styles.navitem} to="add">
-        New Question
-      </NavLink>
-      <NavLink className={styles.navitem} to="/leaderboard">
-        Leader Board
-      </NavLink>
-      {userActive.avatarURL && (
-        <>
-          {" "}
-          <img
-            className={styles.userpic}
-            src={userActive.avatarURL}
-            alt="user pic"
-          />
-          {userActive.name}
-          <img
-            src={logoutIcon}
-            onClick={handleLogout}
-            className={styles.logout}
-            alt="logout button"
-          />
-        </>
-      )}
+      <nav>
+        <NavLink className={styles.navitem} exact to="/">
+          Dashboard
+        </NavLink>
+        <NavLink className={styles.navitem} to="add">
+          New Question
+        </NavLink>
+        <NavLink className={styles.navitem} to="/leaderboard">
+          Leader Board
+        </NavLink>
+        {userActive.avatarURL && (
+          <>
+            {" "}
+            <img
+              className={styles.userpic}
+              src={userActive.avatarURL}
+              alt="user pic"
+            />
+            {userActive.name}
+            <img
+              src={logoutIcon}
+              onClick={handleLogout}
+              className={styles.logout}
+              alt="logout button"
+            />
+          </>
+        )}
+      </nav>
     </div>
   );
 };

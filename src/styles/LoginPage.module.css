@@ -6,7 +6,10 @@
   height: 40vh;
 }
 .container h4 {
-  padding-bottom: 2rem;
+  margin-top: 6rem;
+  padding: 2rem 10rem;
+  text-align: center;
+  line-height: 2rem;
 }
 .loginBtn {
   margin: 2rem;

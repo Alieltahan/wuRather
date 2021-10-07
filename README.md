@@ -13,7 +13,7 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
 ├── README.md - This file.
 ├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
 ├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
+│   ├── favicon.ico # App Icon.
 │   └── index.html # DO NOT MODIFY
 └── src
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
@@ -21,22 +21,29 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
     ├── components # container for all the components.
         ├── LoginPage.js #
             ├── NavBar.js #
-                └──  NavItem.js #
             ├── Dashboard.js #
                 ├── Questions.js #
                     ├── AnsweredQ.js #
                     └──  UnAnsweredQ.js #
                         └──RenderQ.js
-                    QUESTION DETAILS....
+                └── QUESTION DETAILS....
             └── LeaderBoard.js #
-                └── UserCard.js #
         ├── store # container for the redux store's files
             ├── confStore.js # Redux Store
             ├── rootReducer.js # Combining users/questions reducers
             ├── users.js # users reducer
+            ├── auth.js # authentication & logged in user reducer
             └── questions.js # questions reducer
     ├── styles # container for all the styles files.
         ├── LoginPage.module.css #
+        ├── Dashboard.module.css #
+        ├── LeaderBoard.module.css #
+        ├── NavBar.module.css #
+        ├── NewQuestions.module.css #
+        ├── NotFound.module.css #
+        ├── QuestionDetails.module.css #
+        ├── Questions.module.css #
+        ├── RenderQ.module.css #
         ├──  #
 
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
