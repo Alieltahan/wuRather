@@ -1,26 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styles from "../styles/Leaderboard.module.css";
+import { sortedUsers } from "./util/Sorting";
 
 const LeaderBoard = () => {
   const userList = useSelector((state) => state.users);
-  // Storing users as key and total score as property
-  let usersObj = {};
-  const usersScore = Object.keys(userList).map((user) => {
-    const userId = user;
-    const userScore =
-      Object.keys(userList[user].answers).length +
-      userList[user].questions.length;
-    return (usersObj[userId] = userScore);
-  });
-  // Sorting the score in an Array
-  const sorting = Object.keys(usersScore).sort((a, b) => {
-    return usersScore[b] - usersScore[a];
-  });
-  // Storing the users' ID in an array
-  const usersKeys = Object.keys(usersObj);
-  // using the sorted score's index to sort the user Ids
-  const usersSorted = sorting.map((i) => usersKeys[i]);
+
+  // Imported Func for sorting the leaderBoard based on their total Score
+  /**
+   * @params : (Object): state of users
+   */
+  const usersSorted = sortedUsers(userList);
 
   return (
     <section className={styles.leaderboard}>

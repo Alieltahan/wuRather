@@ -20,18 +20,5 @@ const authSlice = createSlice({
   },
 });
 
-//
-export const getAnsweredQ = (state) => {
-  if (!state.auth.loggedin) return;
-  return Object.keys(state.auth.answers);
-};
-
-export const getUnAnsweredQ = (state) => {
-  if (!state.auth.loggedin) return;
-  return Object.keys(state.questions).filter(
-    (o1) => !Object.keys(state.auth.answers).some((o2) => o2 === o1)
-  );
-};
-
 export const { activeUser, answerQuestion, login } = authSlice.actions;
 export default authSlice.reducer;

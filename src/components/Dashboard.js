@@ -1,12 +1,14 @@
 import React from "react";
-import { getAnsweredQ, getUnAnsweredQ } from "../store/authUser";
 import styles from "../styles/Dashboard.module.css";
 import Questions from "./Questions";
 import { useSelector } from "react-redux";
+import { sortedQ } from "./util/Sorting";
 
 const Dashboard = () => {
-  const answeredQ = useSelector((state) => getAnsweredQ(state));
-  const unAnsweredQ = useSelector((state) => getUnAnsweredQ(state));
+  const state = useSelector((state) => state);
+  const { answeredQSorted, unAnsweredQSorted } = sortedQ(state);
+  const answeredQ = answeredQSorted.map((q) => q.id);
+  const unAnsweredQ = unAnsweredQSorted.map((q) => q.id);
 
   return (
     <div className={styles.container}>

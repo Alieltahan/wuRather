@@ -15,10 +15,6 @@ const questionsSlice = createSlice({
       let { qid, authedUser, answer } = action.payload;
       state[qid][answer].votes.push(authedUser);
     },
-    // TODO Fixed/Removed
-    addQuestion: (state, action) => {
-      return state;
-    },
   },
 });
 
