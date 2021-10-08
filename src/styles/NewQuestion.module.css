@@ -96,7 +96,6 @@
 }
 .form input,
 .form textarea {
-  width: 100%;
   border: 2px solid gray;
   background: none;
   position: relative;
@@ -136,7 +135,7 @@
 }
 .form.goBottom input,
 .form.goBottom textarea {
-  padding: 12px 12px 12px 12px;
+  padding: 10px;
 }
 .form.goBottom label {
   top: 0;

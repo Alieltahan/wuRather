@@ -35,6 +35,6 @@ export const sortedQ = (state) => {
 
   const answeredQSorted = Object.values(state.questions)
     .filter((question) => getAnsweredQId.includes(question.id))
-    .sort((a, b) => b.timestamp - a.timestamp);
+    .sort((a, b) => a.timestamp - b.timestamp);
   return { answeredQSorted, unAnsweredQSorted };
 };

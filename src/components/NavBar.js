@@ -28,17 +28,18 @@ const NavBar = () => {
         </NavLink>
         {userActive.avatarURL && (
           <>
-            {" "}
-            <img
-              className={styles.userpic}
-              src={userActive.avatarURL}
-              alt="user pic"
-            />
-            {userActive.name}
+            <span className={` ${styles.navitem} ${styles.container__img}`}>
+              <img
+                className={styles.userpic}
+                src={userActive.avatarURL}
+                alt="user pic"
+              />
+              {userActive.name}
+            </span>
             <img
               src={logoutIcon}
               onClick={handleLogout}
-              className={styles.logout}
+              className={` ${styles.navitem} ${styles.logout}`}
               alt="logout button"
             />
           </>

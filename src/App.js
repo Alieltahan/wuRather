@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import confStore from "./store/confStore";
 import NotFound from "./components/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
+import LoadingBar from "react-redux-loading-bar";
 
 function App() {
   // Redux Store
@@ -22,6 +23,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
+        <LoadingBar />
         <Switch>
           <Route exact path="/login" component={LoginPage} />
           <PrivateRoute
