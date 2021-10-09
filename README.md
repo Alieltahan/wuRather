@@ -16,6 +16,10 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
 │   ├── favicon.ico # App Icon.
 │   └── index.html # DO NOT MODIFY
 └── src
+    ├── img # Styles for your app. Feel free to customize this as you desire.
+        └── icons #
+            └── logout.svg # logout icon.
+        └── ripped.jpg # background pic for 404 page.
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── components # container for all the components.
@@ -29,6 +33,8 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
                 └── QUESTION DETAILS....
             └── LeaderBoard.js #
         ├── store # container for the redux store's files
+                └── middleware.js #
+                    └── api.js # file for calling backend functions.
             ├── confStore.js # Redux Store
             ├── rootReducer.js # Combining users/questions reducers
             ├── users.js # users reducer
