@@ -27,7 +27,7 @@ const api =
         dispatch(questionsReceived(data[1]));
         setTimeout(() => {
           dispatch(hideLoading());
-        }, 1000);
+        }, 500);
       });
     } else if (action.type === "api/answerQuestion") {
       dispatch(showLoading());

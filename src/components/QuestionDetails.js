@@ -39,12 +39,14 @@ const QuestionDetails = (props) => {
   const optionOneVotes = askedQuestion.optionOne.votes.length;
   const optionTwoVotes = askedQuestion.optionTwo.votes.length;
   const totalVotesCount = optionOneVotes + optionTwoVotes;
-  const optionOneVotePercentage = `percentage percentage${Math.trunc(
+  const optionOnePercentage = Math.trunc(
     (optionOneVotes / totalVotesCount) * 100
-  )}`;
-  const optionTwoVotesPercentage = `percentage percentage${Math.trunc(
+  );
+  const optionTwoPercentage = Math.trunc(
     (optionTwoVotes / totalVotesCount) * 100
-  )}`;
+  );
+  const classOptionOneVotePercentage = `percentage percentage${optionOnePercentage}`;
+  const classOptionTwoVotesPercentage = `percentage percentage${optionTwoPercentage}`;
 
   // Rendering for Questions Not Answered By Active User.
   let renderingQ = (
@@ -57,7 +59,7 @@ const QuestionDetails = (props) => {
       <div className={styles.q__details__header}>
         <strong>
           <i>{askingUser.name}</i>
-        </strong>{" "}
+        </strong>
         asks would you rather...
       </div>
       <form
@@ -124,7 +126,10 @@ const QuestionDetails = (props) => {
                   ""
                 )}
                 1- {askedQuestion.optionOne.text}{" "}
-                <dd className={optionOneVotePercentage}></dd>
+                <dd className={classOptionOneVotePercentage}></dd>
+                <div className={styles.votes}>
+                  {optionOneVotes} votes {optionOnePercentage}%{" "}
+                </div>
               </td>
             </tr>
             <tr>
@@ -134,8 +139,11 @@ const QuestionDetails = (props) => {
                 ) : (
                   ""
                 )}
-                2- {askedQuestion.optionTwo.text}{" "}
-                <dd className={optionTwoVotesPercentage}></dd>
+                2- {askedQuestion.optionTwo.text}
+                <dd className={classOptionTwoVotesPercentage}></dd>
+                <div className={styles.votes}>
+                  {optionTwoVotes} votes {optionTwoPercentage}%
+                </div>
               </td>
             </tr>
           </tbody>

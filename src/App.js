@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
@@ -22,22 +22,16 @@ function App() {
   }, [store]);
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <LoadingBar />
-        <Switch>
-          <Route exact path="/login" component={LoginPage} />
-          <PrivateRoute
-            component={QuestionDetails}
-            path="/questions/:id"
-            exact
-          />
-          <PrivateRoute component={LeaderBoard} path="/leaderboard" exact />
-          <PrivateRoute component={NewQuestion} path="/add" exact />
-          <PrivateRoute component={Dashboard} path="/" exact />
-          <Route to="/NotFound" component={NotFound} />
-          <Redirect to="/NotFound" />
-        </Switch>
-      </BrowserRouter>
+      <LoadingBar />
+      <Switch>
+        <Route exact path="/login" component={LoginPage} />
+        <PrivateRoute component={QuestionDetails} path="/questions/:id" exact />
+        <PrivateRoute component={LeaderBoard} path="/leaderboard" exact />
+        <PrivateRoute component={NewQuestion} path="/add" exact />
+        <PrivateRoute component={Dashboard} path="/" exact />
+        <Route to="/NotFound" component={NotFound} />
+        <Redirect to="/NotFound" />
+      </Switch>
     </Provider>
   );
 }

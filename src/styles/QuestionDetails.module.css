@@ -45,6 +45,9 @@
   }
 }
 
+.votes {
+  font-size: 0.8rem;
+}
 .optioninput {
   -webkit-appearance: none;
   -moz-appearance: none;

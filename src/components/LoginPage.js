@@ -32,6 +32,8 @@ const LoginPage = () => {
   // Handle Login
   const handleLogin = (e) => {
     e.preventDefault();
+    // Guard clause
+    if (userName === "") return alert("Please select a User");
     dispatch(login());
     dispatch(activeUser({ ...usersList[userName] }));
     history.push("/");

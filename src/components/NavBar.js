@@ -20,7 +20,7 @@ const NavBar = () => {
         <NavLink className={styles.navitem} exact to="/">
           Dashboard
         </NavLink>
-        <NavLink className={styles.navitem} to="add">
+        <NavLink className={styles.navitem} to="/add">
           New Question
         </NavLink>
         <NavLink className={styles.navitem} to="/leaderboard">
