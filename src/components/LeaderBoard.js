@@ -16,7 +16,7 @@ const LeaderBoard = () => {
     <section className={styles.leaderboard}>
       <h3>Leader Board</h3>
       {usersSorted.map((user) => (
-        <div className={styles.container}>
+        <div key={user.id} className={styles.container}>
           <img
             className={styles.userpic}
             src={userList[user].avatarURL}

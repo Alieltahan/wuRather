@@ -4,9 +4,19 @@ This is the starter code for the final assessment project for Udacity's React & 
 
 The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
 
+# Installation
+
+- git clone https://github.com/Alieltahan/wuRather.git : for cloning the project locally.
+- npm install: for installing the dependencies.
+- npm start: to start the app locally.
+
 # Description
 
-A simple app for asking/answering questions with two option to select from.
+- A simple app for asking/answering questions with two option to select from.
+- The application has a routing between different nav routes.
+- Login by username (include 3 users to select from).
+- Logout.
+- Private routes which is accessible only by authorization of logged in user.
 
 # Dependencies
 
@@ -164,7 +174,4 @@ _Parameters_: Object that contains the following properties: `authedUser`, `qid`
 | qid        | String | The id of the question that was answered                                                |
 | answer     | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"` |
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
 ```

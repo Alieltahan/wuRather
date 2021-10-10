@@ -29,7 +29,7 @@ function App() {
         <PrivateRoute component={LeaderBoard} path="/leaderboard" exact />
         <PrivateRoute component={NewQuestion} path="/add" exact />
         <PrivateRoute component={Dashboard} path="/" exact />
-        <Route to="/NotFound" component={NotFound} />
+        <PrivateRoute component={NotFound} to="/NotFound" />
         <Redirect to="/NotFound" />
       </Switch>
     </Provider>

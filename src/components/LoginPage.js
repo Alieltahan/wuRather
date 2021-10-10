@@ -11,8 +11,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { activeUser, login } from "../store/authUser";
 import { useHistory } from "react-router";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const [userName, setUserName] = React.useState("");
+  const { from } = props.location.state || { from: { pathname: "/" } };
 
   // Importing dispatch from React-Redux
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const LoginPage = () => {
     if (userName === "") return alert("Please select a User");
     dispatch(login());
     dispatch(activeUser({ ...usersList[userName] }));
-    history.push("/");
+    history.push(from);
   };
 
   return (
