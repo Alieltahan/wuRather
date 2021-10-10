@@ -25,6 +25,7 @@ function App() {
       <LoadingBar />
       <Switch>
         <Route exact path="/login" component={LoginPage} />
+        <PrivateRoute component={NotFound} path="/questions/bad-id" />
         <PrivateRoute component={QuestionDetails} path="/questions/:id" exact />
         <PrivateRoute component={LeaderBoard} path="/leaderboard" exact />
         <PrivateRoute component={NewQuestion} path="/add" exact />
