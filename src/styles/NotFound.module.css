@@ -6,7 +6,7 @@
   padding: 1rem;
 }
 .background {
-  background-size: 100% 100%;
+  max-width: 100%;
 }
 .glow {
   width: 220px;
