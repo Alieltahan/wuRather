@@ -1,35 +1,39 @@
 .container {
-  display: flex;
-  justify-content: flex-end;
-  width: auto;
-  margin-bottom: 2rem;
-  height: 2.5rem;
-  min-width: max-content;
-  padding: 0.4rem 1rem;
-  align-content: center;
-  margin-top: -0.2rem;
+	display: flex;
+	justify-content: flex-end;
+	width: auto;
+	margin-bottom: 2rem;
+	height: 2.5rem;
+	min-width: max-content;
+	padding: 0.4rem 1rem;
+	align-content: center;
+	margin-top: -0.2rem;
 }
 .navitem {
-  padding: 1rem 0.8rem;
+	padding: 1rem 0.8rem;
 }
 .navitem:active,
 .navitem:link {
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
+	color: black;
 }
 .navitem:hover {
-  color: orangered;
+	color: orangered;
 }
 .userpic {
-  border-radius: 50%;
-
-  height: 60%;
-  padding-right: 0.5rem;
+	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	left: -23px;
+	padding-right: 0.5rem;
 }
 .container__img {
-  margin-top: 0.5rem;
+	margin-top: 0.5rem;
+	margin-left: 1.5rem;
+	position: relative;
 }
 .logout {
-  padding: 0 0.6rem;
-  cursor: pointer;
+	padding: 0 0.6rem;
+	cursor: pointer;
 }
